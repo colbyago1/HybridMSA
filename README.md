@@ -20,7 +20,7 @@ Importantly, this enables confident and accurate structure prediction for engine
 
 Tool's relying on MSAs (e.g. AlphaFold2) often fail or perform poorly when:
 
-- A protein includes de novo designed regions,
+- A protein includes *de novo* designed regions,
 
 - The protein is a chimera or fusion,
 
@@ -51,7 +51,7 @@ g++ -std=c++17 src/prepare_msa_B.cpp -o prepare_msa_B
 
 ## Usage
 
-parse_msa_bfd_only processes the BFD MSA (in A3M format) from AlphaFold2 genetic searching to extract specific contiguous regions (contigs) from each aligned sequence; these contigs are specified by exact substring matches to the query (first) sequence, and the resulting sub-alignments are saved for downstream use. While it is optimized for BFD-style A3M inputs, the program is format-flexible and supports any input readable by reformat.pl, including: fas, a2m, a3m, sto, psi, clu.
+**parse_msa_bfd_only** processes the BFD MSA (in A3M format) from AlphaFold2 genetic searching to extract specific contiguous regions (contigs) from each aligned sequence; these contigs are specified by exact substring matches to the query (first) sequence, and the resulting sub-alignments are saved for downstream use. While it is optimized for BFD-style A3M inputs, the program is format-flexible and supports any input readable by reformat.pl, including: fas, a2m, a3m, sto, psi, clu.
 
 Usage: ./parse_msa_bfd_only /path/to/msas/directory contig1 [contig2] ...
 
@@ -61,7 +61,7 @@ Usage: ./parse_msa_bfd_only /path/to/msas/directory contig1 [contig2] ...
 
 - <contigX>: Substring(s) to extract from aligned sequences
 
-prepare_msa_A generates a HybridMSA for the first sequence in an input FASTA file by aligning each specified contig exactly to its corresponding position within the full input sequence and then filling all other (non-contig) positions with masked tokens to indicate missing or unaligned regions. This approach enables rapid construction of MSAs even when contigs occur in arbitrary positions or in different orders within the input sequences, by preserving positional accuracy and marking gaps clearly. Each sequence within the input FASTA file should be the same length and contigs should be in the same positions (e.g. output FASTA file from ProteinMPNN).
+**prepare_msa_A** generates a HybridMSA for the first sequence in an input FASTA file by aligning each specified contig exactly to its corresponding position within the full input sequence and then filling all other (non-contig) positions with masked tokens to indicate missing or unaligned regions. This approach enables rapid construction of MSAs even when contigs occur in arbitrary positions or in different orders within the input sequences, by preserving positional accuracy and marking gaps clearly. Each sequence within the input FASTA file should be the same length and contigs should be in the same positions (e.g. output FASTA file from ProteinMPNN).
 
 Usage: ./prepare_msa_A input_file.fasta /path/to/output/of/run_divide_msa_bfd_only/directory contig1 [contig2] ...
 
@@ -71,7 +71,7 @@ Usage: ./prepare_msa_A input_file.fasta /path/to/output/of/run_divide_msa_bfd_on
 
 - <contigX>: One or more substring(s) defining contigs to align and assemble into a HybridMSA
 
-prepare_msa_B generates a HybridMSA for each sequence in an input FASTA file with proper formatting for ColabFold input by prepending sequence-specific headers to the A3M file output from prepare_msa_A. It supports different cardinalities (e.g., "monomer" or "homotrimer") and formats output filenames accordingly.
+**prepare_msa_B** generates a HybridMSA for each sequence in an input FASTA file with proper formatting for ColabFold input by prepending sequence-specific headers to the A3M file output from prepare_msa_A. It supports different cardinalities (e.g., "monomer" or "homotrimer") and formats output filenames accordingly.
 
 Usage: ./prepare_msa_B input_file.fasta fasta_file a3m_file cardinality
 
