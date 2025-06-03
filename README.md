@@ -82,6 +82,6 @@ Usage: ./prepare_msa_B input_file.fasta fasta_file a3m_file cardinality
 - <cardinality>: Specifies assembly type, e.g., "monomer" or "homotrimer"
 
 ## Citation
-This method and associated tools are described in a recent publication: [Insert full citation here, including authors, title, journal, year, and DOI or URL].
+This method is described in a recent publication: [Insert full citation here, including authors, title, journal, year, and DOI or URL].
 
 Please cite this work if you use HybridMSA in your research!
