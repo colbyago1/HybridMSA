@@ -1,5 +1,7 @@
 // HybridMSA
 
+![Graphical Overview](assets/HybridMSA.png)
+
 // download https://github.com/soedinglab/hh-suite/blob/master/scripts/reformat.pl
 
 // compilation
