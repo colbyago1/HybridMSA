@@ -1,7 +1,8 @@
 # HybridMSA
 
-## About HybridMSA
 HybridMSA is a versatile C++ tool for generating customized multiple sequence alignments (MSAs) for proteins — especially those produced via deep learning-driven motif scaffolding pipelines, though it supports a range of other use cases including fusion/chimeric proteins, tagged proteins, and more.
+
+## How HybridMSA works
 
 ![HybridMSA](assets/HybridMSA.png)
 
@@ -31,13 +32,11 @@ HybridMSA solves this by seperating genetic searching and MSA generation, enabli
 
 ## Benchmarking HybridMSA
 
-![HybridMSA](assets/Pipeline.png)
+![HybridMSA](assets/Benchmarking.png)
 
 In a benchmarking case of 1000 motif scaffolds generated via the aforementioned pipeline, HybridMSA outperformed ColabFold's implementation of AlphaFold2 under default settings (CF) and under single-sequence mode (CFss) with regard to accuracy and confidence of predicted models. In a benchmarking case of 1000 motif scaffolds generated via the aforementioned pipeline, HybridMSA outperformed ColabFold's implementation of AlphaFold2 under default settings (CF) and under single-sequence mode (CFss) with regard to accuracy and confidence of predicted models. We attribute this to HybridMSA’s ability to preserve evolutionary context while avoiding  noisy or misleading genetic searches for artificial regions.
 
 In addition, HybridMSA that enables the bypassing of time-consuming genetic and structural database searches, decreasing structure predicton time significantly compared to CF.
-
-![HybridMSA](assets/Benchmarking.png)
 
 ## Installation
 
