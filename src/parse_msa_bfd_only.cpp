@@ -34,17 +34,20 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc < 3) { // Minimum arguments: program name, MSA path, and at least one substring
-        std::cerr << "Usage: " << argv[0] << " <path_to_msas_directory> <contig1> [contig2] ..." << std::endl;
+    if (argc < 4) { // Minimum arguments: program name, MSA path, and at least one substring
+        std::cerr << "Usage: " << argv[0] << " <path_to_reformat.pl> <path_to_msas_directory> <contig1> [contig2] ..." << std::endl;
         return 1;
     }
 
     // Get MSA directory path
-    std::string path = argv[1];
+    std::string reformat = argv[1];
+
+    // Get MSA directory path
+    std::string path = argv[2];
 
     // Get contigs
     std::vector<std::string> substrings;
-    for (int i = 2; i < argc; ++i) {
+    for (int i = 3; i < argc; ++i) {
         substrings.push_back(argv[i]);
     }
 
@@ -56,7 +59,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Reformat bfd_uniclust_hits.a3m
-    std::string cmd = "~/work/scripts/reformat.pl a3m a3m " + path + "/bfd_uniclust_hits.a3m bfd_uniclust.a3m";
+    std::string cmd = reformat + " a3m a3m " + path + "/bfd_uniclust_hits.a3m bfd_uniclust.a3m";
     system(cmd.c_str());
 
     // Reformat bfd_uniclust.a3m
