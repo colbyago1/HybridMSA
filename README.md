@@ -41,12 +41,14 @@ Follow the steps below to install dependencies and compile the source code.
 
 1. Download reformat.pl
 
-HybridMSA relies on HH-suite’s reformat.pl (https://github.com/soedinglab/hh-suite/blob/master/scripts/reformat.pl) to standardize MSA formats.
+HybridMSA relies on HH-suite’s [reformat.pl](https://github.com/soedinglab/hh-suite/blob/master/scripts/reformat.pl) to standardize MSA formats.
 
 2. Compile the three C++ utility programs
 
 g++ -std=c++17 src/parse_msa_bfd_only.cpp -o parse_msa_bfd_only
+
 g++ -std=c++17 src/prepare_msa_A.cpp -o prepare_msa_A -lstdc++fs
+
 g++ -std=c++17 src/prepare_msa_B.cpp -o prepare_msa_B
 
 ## Usage
